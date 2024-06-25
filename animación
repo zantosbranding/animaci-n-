@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animación de ejemplo</title>
+  <style>
+    #animacion {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 50px;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="animacion"></div>
+
+  <script>
+    function animar() {
+      var elemento = document.getElementById("animacion");
+      var pos = 0;
+      var id = setInterval(frame, 10);
+
+      function frame() {
+        if (pos == 350) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elemento.style.left = pos + 'px';
+        }
+      }
+    }
+
+    window.onload = animar;
+  </script>
+</body>
+</html>
